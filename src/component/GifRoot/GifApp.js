@@ -5,7 +5,7 @@ import GifList from '../Gifs/GifList'
 
 class GifApp extends Component {
     state = {
-        gifListResult: [],
+        gifListResults: [],
     }
 
     //Lifecyle method that executes when the application first renders.
@@ -27,7 +27,7 @@ class GifApp extends Component {
                 console.log(gifResults)
                 this.setState({
                     ...this.state,
-                    gifListResult: gifResults.data.data
+                    gifListResults: gifResults.data.data
                 });
             })
             .catch((error) => console.error(`Something went wrong: ${error} `));
@@ -37,7 +37,7 @@ class GifApp extends Component {
         return (
             <div>
                 <h1> Gif</h1>
-                <GifList  gifList={this.state.gifListResult} />
+                <GifList  gifResults={this.state.gifListResults} />
             </div>
         )
     }

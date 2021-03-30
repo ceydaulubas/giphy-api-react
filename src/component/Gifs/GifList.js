@@ -1,9 +1,15 @@
 import React from 'react'
 
-const GifList = () => {
+import Gif from './Gif'
+
+//(props)=({gifResult})
+
+const GifList = ({gifResults}) => {
     return (
         <div>
-            Hello1
+            {gifResults.map((gifItem)=>(
+                <Gif key ={gifItem.id} gif={gifItem} />
+            ))}
         </div>
     )
 }
