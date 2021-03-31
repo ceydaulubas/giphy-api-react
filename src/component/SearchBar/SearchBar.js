@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './SearchBar.css'
 
-// import { Button, InputGroup, FormControl } from 'react-bootstrap';
+import { Button, InputGroup, FormControl } from 'react-bootstrap';
 const initialState = { userInput: "" };
 
 const SearchBar = ({ addSearchInput }) => {
@@ -18,7 +18,7 @@ const SearchBar = ({ addSearchInput }) => {
     };
     return (
         <form onSubmit={handleFormSubmit}>
-            {/* <InputGroup className="justify-content-md-center">
+            <InputGroup className="justify-content-md-center">
                 <FormControl
                     aria-label="Default"
                     aria-describedby="inputGroup-sizing-default"
@@ -30,8 +30,8 @@ const SearchBar = ({ addSearchInput }) => {
                     onChange={handleInputChange}
                 /> 
                 <Button variant="secondary" type="submit">Find GIF</Button>
-            </InputGroup> */}
-            <input
+            </InputGroup>
+            {/* <input
                 type="text"
                 name="fname"
                 value={searchState.userInput}
@@ -39,7 +39,7 @@ const SearchBar = ({ addSearchInput }) => {
                 placeholder="Search for gif here..."
             />
                 <button 
-                type="submit">Find GIF</button>
+                type="submit">Find GIF</button> */}
         </form>
     )
 
