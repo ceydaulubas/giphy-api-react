@@ -3,18 +3,20 @@ import axios from 'axios';
 
 import GifList from '../Gifs/GifList'
 import SearchBar from '../SearchBar/SearchBar'
+import SelectedGif from '../Gifs/SelectedGif'
 
 class GifApp extends Component {
     state = {
         searchBarInput: "",
         gifListResults: [],
+        selectedGif: ""
     }
 
     //Lifecyle method that executes when the application first renders.
     componentDidMount() {
         this.handleSearchForGif();
     }
-    
+
     // Lifecycle method that executes when the application state is updated.
     componentDidUpdate(prevState) {
         if (this.state.searchBarInput !== prevState.searchBarInput) {
@@ -26,7 +28,9 @@ class GifApp extends Component {
     // The gif results are the updated when the call is made.
     handleSearchForGif = () => {
         const API_KEY = "P5GdPUaFvBJoxcSLg9DH11iZRBrpbv5t";
-        const searchInput = this.state.searchBarInput;
+        const searchInput = this.state.searchBarInput
+        // ? this.state.searchBarInput
+        // : "hello";
 
         axios
             .get(
@@ -46,13 +50,31 @@ class GifApp extends Component {
         this.setState({ ...this.state, searchBarInput: searchInput });
     };
 
+    handleSelectedGif = (chosenGif) => {
+        this.setState({ ...this.state, selectedGif: chosenGif });
+    }
+
     render() {
         return (
             <div>
-                <h1> Gif</h1>
-                <SearchBar addSearchInput={this.handleAddSearchBarInputToAppState} />
-                <GifList gifResults={this.state.gifListResults} />
-            </div>
+                <SearchBar addSearchInput={this.handleAddSearchBarInputToAppState} /> 
+
+                <div>
+                    {this.state.selectedGif && (
+                        <SelectedGif selected={this.state.selectedGif.images} />
+                    )}
+                </div>
+
+                <div>
+                    {/* {this.state.gifListResults.length ? ( */}
+                    <GifList
+                        gifResults={this.state.gifListResults}
+                        selectGifClick={this.handleSelectedGif} />
+                    {/* ):(
+                    "Loading data from giphy..."
+                )} */}
+                </div>
+                </div>
         )
     }
 }
