@@ -16,9 +16,9 @@ class SelectedGif extends Component {
     }
   }
 
-//   componentWillUnmount() {
-//     alert(`Selected Gif will be removed!`);
-//   }
+  componentWillUnmount() {
+    alert(`Selected Gif will be removed!`);
+  }
 
   render() {
     return (

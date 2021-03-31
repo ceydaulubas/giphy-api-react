@@ -9,7 +9,7 @@ class GifApp extends Component {
     state = {
         searchBarInput: "",
         gifListResults: [],
-        selectedGif: ""
+        selectedGif: {}
     }
 
     //Lifecyle method that executes when the application first renders.
@@ -54,6 +54,10 @@ class GifApp extends Component {
         this.setState({ ...this.state, selectedGif: chosenGif });
     }
 
+    handleToggleSelectedGif = () => {
+        this.setState({ ...this.state, selectedGif: {} });
+    }
+
     render() {
         return (
             <div>
@@ -63,6 +67,12 @@ class GifApp extends Component {
                     {this.state.selectedGif && (
                         <SelectedGif selected={this.state.selectedGif.images} />
                     )}
+
+                    {this.state.selectedGif.images && (
+              <button onClick={() => this.handleToggleSelectedGif()}>
+                Remove Selected Gif
+              </button>
+            )}
                 </div>
 
                 <div>
