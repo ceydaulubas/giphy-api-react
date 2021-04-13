@@ -1,0 +1,13 @@
+.searchbar{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.searchbar-button{
+    @media screen 
+  and (min-width: 630px) 
+  and (max-width: 1000px) {
+    color:red;
+  }
+}

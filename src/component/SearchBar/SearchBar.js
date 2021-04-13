@@ -17,21 +17,22 @@ const SearchBar = ({ addSearchInput }) => {
         setSearchState(initialState);
     };
     return (
-        <form onSubmit={handleFormSubmit}>
-            <InputGroup className="justify-content-md-center">
-                <FormControl
-                    aria-label="Default"
-                    aria-describedby="inputGroup-sizing-default"
+        <div className= "searchbar">
+            <form onSubmit={handleFormSubmit} className="searchbar-form">
+                <InputGroup className="justify-content-md-center">
+                    <FormControl
+                        aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default"
 
-                    placeholder="Search for gif here..."
-                    type="text"
-                    name="search"
-                    value={searchState.userInput}
-                    onChange={handleInputChange}
-                /> 
-                <Button variant="secondary" type="submit">Find GIF</Button>
-            </InputGroup>
-            {/* <input
+                        placeholder="Search for gif here..."
+                        type="text"
+                        name="search"
+                        value={searchState.userInput}
+                        onChange={handleInputChange}
+                    />
+                    <Button className="searchbar-button" variant="primary" type="submit">Find GIF</Button>
+                </InputGroup>
+                {/* <input
                 type="text"
                 name="fname"
                 value={searchState.userInput}
@@ -40,7 +41,10 @@ const SearchBar = ({ addSearchInput }) => {
             />
                 <button 
                 type="submit">Find GIF</button> */}
-        </form>
+            </form>
+
+        </div>
+
     )
 
 }

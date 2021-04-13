@@ -1,9 +1,35 @@
 .App {
   text-align: center;
-  margin-left:15%;
-  margin-right:15%
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
-.title{
-  margin-top:5%
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(-45deg, #ee7752, #a35372, #2796be, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
 }
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.title {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color: #091185;
+  font-family: "Orelega One", cursive;
+  font-weight: bold;
+}
+
